@@ -1,0 +1,25 @@
+<div id="main_div">
+  <div class="conditions">
+    <h1 class="title">撰写消息</h1>
+    <%= form_tag :action => 'send_now' do %>
+        <%= errors_for @message %>
+        <%= submit_tag "发送", :class => "btn btn-primary" %> <%= button_to_function "取消", "go_url('/msg/index')", :class => "btn" %>
+
+        <p><label for="employee_username">收件人</label><br/>
+          <%= text_field 'message', 'to_names', :style => "width:400px;" %>
+        </p>
+
+        <p><label for="employee_username">标题</label><br/>
+          <%= text_field 'message', 'title', :style => "width:400px;" %></p>
+
+        <p><label for="employee_username">内容</label><br/>
+          <%= text_area "message", "content", :style => "height:100px;width:400px;" %>
+        </p>
+
+        <%= submit_tag "发送", :class => "btn btn-primary" %>
+        <%= button_to_function "取消", "go_url('/msg/index')", :class => "btn" %>
+    <% end %>
+  </div>
+</div>
+
+

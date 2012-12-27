@@ -1,0 +1,86 @@
+<style type="text/css">
+    #main_div .conditions table td {
+        padding: 2px 5px;
+    }
+
+    #main_div .conditions th {
+        width: 70px;
+        text-align: left;
+    }
+
+    .conditions table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 3px 0;
+    }
+
+    .conditions table th {
+        background-color: #eee;
+        height: 30px;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+
+    .conditions table td {
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+</style>
+<div id="main_div">
+  <div class="conditions">
+    <h1 class="title"><%= @title %>
+      <%= button_to_function "撰写新消息", "window.location.href='#{url_for(:action=>"new")}'", :class => "btn" %>
+    </h1>
+    <%= link_to "回复", {:action => "reply", :id => @message.id}, {:popup=>true} -%>&nbsp;
+    <%= link_to "删除", {:action => "delete", :id => @message.id}, :confirm => "Are you sure?" -%>
+    <table>
+      <tr>
+        <th>
+          发件人：
+        </th>
+        <td>
+          <%= @message.from_user.username -%> 于 <%= format_date(@message.created_at, :full) -%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          主题：
+        </th>
+        <td>
+          <%= @message.title -%>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          内容：
+        </th>
+        <td>
+          <%= hidden_field_tag "message_id",@message.id -%>
+          <%= @message.content.html_safe -%>
+        </td>
+      </tr>
+    </table>
+  </div>
+</div>
+<script type="text/javascript">
+    function quotation_confirm_approve(quotation_id, reject,obj) {
+        if (reject == 0) {
+            if (!confirm('确认批准？')) {
+                return;
+            }
+        } else {
+            if (!confirm('确认拒绝？')) {
+                return;
+            }
+        }
+        var m_id = $(obj).parents("td").find("#message_id").val();
+        $.getJSON("/message/ajax_set_read", {ids:[m_id]}, function (json) {
+            if (json.success) {
+                window.location = "/sales/quotation_confirm_approve/"+quotation_id.toString()+"?reject="+reject.toString();
+            } else {
+                alert(json.info);
+            }
+        });
+
+    }
+</script>

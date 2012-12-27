@@ -1,0 +1,55 @@
+<script type="text/javascript" src="/jquery/js/validation.js"></script>
+<div class="conten_heading">
+  <div class="page_heading">
+    我们在这里
+  </div>
+  <div class="breadcrumb">
+    <a href="index.php">首页</a>&nbsp;/&nbsp;联系我们
+  </div>
+</div>
+<div class="content_area">
+  <div class="content_mid_area">
+    <div class="contact_banner"></div>
+    <div class="contact_text">
+      <div class="contact_address">
+        <br>
+        <strong>南昌思创工程有限公司</strong><br>
+        地址：南昌市洪都北大道299号金域名都高能•首座写字楼4层<br/>
+        邮编：330046<br/>
+        电话：0791-88101962<br/>
+        传真：0791-88102305<br/>
+        <br>
+        Email: <a href="mailto:strong@gmail.com">strong@gmail.com</a></div>
+      <div class="contact_page_form">
+        <div class="contact_form_text_top">
+          很高兴为您服务，方便的话请给我们留言以便我们的工作人员为您提供更贴心的服务。
+        </div>
+            <%= form_tag "/messages/leave_message", :id => "contact", :name => "contact", :onsubmit => "return validate()" do -%>
+            <%= hidden_field_tag "url", params[:action] -%>
+            <div class="contact_input_name_area">
+              <input name="User" type="text" class="input_contact_form" id="User" onfocus="this.value = ( this.value == this.defaultValue ) ? '' : this.value;return true;" value="Name *" onkeypress="return CheckAlphaValue(event);" onblur="this.value = ( this.value == '' ) ? 'Name *' : this.value; return validateUser();">
+            </div>
+            <div class="contact_input_company_area">
+              <input name="Company" type="text" class="input_contact_form" id="Company" onfocus="this.value = ( this.value == this.defaultValue ) ? '' : this.value;return true;" value="Company" onblur="this.value = ( this.value == '' ) ? 'Company' : this.value;return true;">
+            </div>
+            <div class="contact_input_name_area">
+
+              <input name="Email" type="text" class="input_contact_form" id="Email" onfocus="this.value = ( this.value == this.defaultValue ) ? '' : this.value;return true;" value="Email *" onblur="this.value = ( this.value == '' ) ? 'Email *' : this.value;return validateEmail();">
+
+            </div>
+            <div class="contact_input_company_area">
+              <input name="Phone" type="text" class="input_contact_form" id="Phone" onfocus="this.value = ( this.value == this.defaultValue ) ? '' : this.value;return true;" value="Phone *" onkeypress="return CheckNemericValue(event);" onblur="this.value = ( this.value == '' ) ? 'Phone *' : this.value;return validatePhone();">
+            </div>
+            <div class="input_contact_message_area">
+              <textarea name="Message" id="Message" cols="45" rows="5" class="input_message_contact" onfocus="this.value = ( this.value == this.defaultValue ) ? '' : this.value;return true;" onblur="this.value = ( this.value == '' ) ? 'Message *' : this.value;return validateMessage();">Message
+                *</textarea>
+            </div>
+            <div class="btn_contact_page">
+              <input type="submit" name="button" value="" id="button" class="btn_submit_contact">
+            </div>
+        <% end -%>
+      </div>
+    </div>
+  </div>
+  <div class="content_bottom"></div>
+</div>

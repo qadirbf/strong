@@ -1,0 +1,40 @@
+<h1 class="title"><%= @title %></h1>
+<%= include_datepicker %>
+<%= form_for @project, :url => "/projects/update", :html => {:multipart => true} do |f| %>
+    <%= hidden_field_tag "id", params[:id] -%>
+    <%= errors_for @project %>
+    <table class="blue_tb" width="80%">
+      <tr>
+        <th>项目名称</th>
+        <td><%= f.text_field :name %></td>
+        <th>项目时间</th>
+        <td><%= f.text_field :project_date, :value => format_date(@project.project_date, :date), :class => "datepicker" %></td>
+      </tr>
+      <tr>
+        <th>技术信息</th>
+        <td><%= f.text_area :tech_info, :style => "width:400px;height:100px;" %></td>
+        <th>项目描述</th>
+        <td><%= f.text_area :description, :style => "width:400px;height:100px;" %></td>
+      </tr>
+      <tr>
+        <th>系统配置</th>
+        <td><%= f.text_area :system_config, :style => "width:400px;height:100px;" %></td>
+        <th>备注</th>
+        <td><%= f.text_area :notes, :style => "width:400px;height:100px;" %></td>
+      </tr>
+      <tr>
+        <th>项目图片（首页图）275x228</th>
+        <td>
+          <%= image_tag "/projects/#{@project.index_pic}" unless @project.index_pic.blank? -%>
+          <%= file_field_tag :index_pic %></td>
+        <th>项目图片（显示页图）487x251</th>
+        <td>
+          <%= image_tag "/projects/#{@project.pic_path}" unless @project.pic_path.blank? -%>
+          <%= file_field_tag :pic_path %></td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= submit_tag "保存", :class => "btn btn-primary" %>
+          <%= button_to_function "取消", "cancel()", :class => "btn" %></td>
+      </tr>
+    </table>
+<% end %>

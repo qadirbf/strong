@@ -1,0 +1,28 @@
+<h1 class="title"><%= @title -%>
+  <%= button_to_function "添加车辆", "open_url('/cars/edit')", :class => "btn" %>
+</h1>
+<table class="list_tb">
+  <tr class="title">
+    <td style="width:20%;">车辆名</td>
+    <td>牌照</td>
+    <td>购买时间</td>
+    <td>上次年检</td>
+    <td>使用状态</td>
+    <td>操作</td>
+  </tr>
+  <% @cars.each do |c| -%>
+      <tr>
+        <td>
+          <%= link_to c.name, {:action => "show", :id => c.id, :format => "php"}, :target => "_blank" -%>
+        </td>
+        <td><%= c.license -%></td>
+        <td><%= format_date(c.buy_time, :date) -%></td>
+        <td><%= format_date(c.last_check_time, :date) -%></td>
+        <td><%= c.using_status -%></td>
+        <td>
+          <%= link_to_function "查看", "open_url('/cars/show/#{c.id}.php')" -%>&nbsp;&nbsp;
+          <%= link_to_function "修改", "go_url('/cars/edit/#{c.id}.php')" -%>&nbsp;&nbsp;
+        </td>
+      </tr>
+  <% end -%>
+</table>

@@ -1,0 +1,57 @@
+<h1 class="title"><%= @title -%>
+  <%= button_to_function "添加项目", "open_url('/projects/edit')", :class => "btn" %>
+  <div style="float:right; margin-right: 100px;">
+    <%= link_to_function "全选", "$('.chk').attr('checked', true)" -%> &nbsp;&nbsp;
+    <%= link_to_function "取消选择", "$('.chk').attr('checked', false)" -%> &nbsp;&nbsp;
+    <%= button_to_function "删除项目", "delete_projects()", :class => "btn" -%>
+  </div>
+</h1>
+<%= page_links @projects %>
+<table class="list_tb">
+  <tr class="title">
+    <td style="width:20%;">项目名称</td>
+    <td>项目时间</td>
+    <td>项目描述</td>
+    <td>技术特点</td>
+    <td>系统配置</td>
+    <td>操作</td>
+  </tr>
+  <% @projects.each do |p| -%>
+      <tr>
+        <td>
+          <%= check_box_tag "ids", p.id, nil, {:class => "chk"} -%>
+          <%= link_to p.name, {:action => "show", :id => p.id, :format => "php"}, :target => "_blank" -%>
+        </td>
+        <td><%= p.project_date -%></td>
+        <td><%= truncate(p.description) -%></td>
+        <td><%= truncate(p.tech_info) -%></td>
+        <td><%= truncate(p.system_config) -%></td>
+        <td>
+          <%= link_to_function "查看", "open_url('/projects/show/#{p.id}.php')" -%>&nbsp;&nbsp;
+          <%= link_to_function "修改", "go_url('/projects/edit/#{p.id}.php')" -%>&nbsp;&nbsp;
+          <%= link_to "删除", {:action => "delete", :id => p.id}, :confirm => "Are you sure?" -%>
+        </td>
+      </tr>
+  <% end -%>
+</table>
+<%= page_links @projects %>
+<script language="javascript">
+    function delete_projects() {
+        var ids = _.compact(_.map($(".chk"), function (c) {
+            return (c.checked ? c.value : null);
+        })).join(",");
+        if (ids.length == 0) {
+            alert("请选择项目！");
+        }
+        else {
+            if (confirm("确定要删除吗?")) {
+                $.post("<%= url_for(:action=>"delete_projects", :controller => "projects") -%>", { ids:ids },
+                        function (data) {
+                            alert("删除成功！");
+                            window.location.reload();
+                        });
+            }
+        }
+
+    }
+</script>

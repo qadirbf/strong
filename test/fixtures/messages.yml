@@ -1,0 +1,43 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  对外的思创公司网站（下文称之“外网”）还有首页的图片需要做；招贤纳士页面，留言系统未完成。: MyString
+  内部管理网站（下文称之“内网”）做好了员工信息和项目信息管理两个部分，接下来将要做站内消息和车辆管理功能。: MyString
+  以下是我下周的网站开发进度计划：: MyString
+  [: MyString
+  ]12-24: MyString
+  内网站内消息功能: MyString
+  [: MyString
+  ]12-25: MyString
+  内网车辆管理功能: MyString
+  [: MyString
+  ]12-26: MyString
+  内网车辆管理功能: MyString
+  [: MyString
+  ]12-27: MyString
+  外网留言功能、招贤纳士页面: MyString
+  [: MyString
+  ]12-28: MyString
+  外网首页图片及内容调整: MyString
+  预计下周五网站能完成。: MyString
+
+two:
+  对外的思创公司网站（下文称之“外网”）还有首页的图片需要做；招贤纳士页面，留言系统未完成。: MyString
+  内部管理网站（下文称之“内网”）做好了员工信息和项目信息管理两个部分，接下来将要做站内消息和车辆管理功能。: MyString
+  以下是我下周的网站开发进度计划：: MyString
+  [: MyString
+  ]12-24: MyString
+  内网站内消息功能: MyString
+  [: MyString
+  ]12-25: MyString
+  内网车辆管理功能: MyString
+  [: MyString
+  ]12-26: MyString
+  内网车辆管理功能: MyString
+  [: MyString
+  ]12-27: MyString
+  外网留言功能、招贤纳士页面: MyString
+  [: MyString
+  ]12-28: MyString
+  外网首页图片及内容调整: MyString
+  预计下周五网站能完成。: MyString

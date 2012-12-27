@@ -1,0 +1,36 @@
+<h1 class="title"><%= @title %>
+  <%= button_to_function "修改", "go_url('/users/edit/#{@user.id}')", :class => "btn" %>
+  <%= button_to_function "删除", "confirm_url('确定删除？','/users/destroy/#{@user.id}')", :class => "btn" %>
+</h1>
+<table class="blue_tb" style="100%">
+  <tr>
+    <th>用户名</th>
+    <td><%= @user.username %></td>
+    <th>密码</th>
+    <td><%= @user.decode_pass %></td>
+    <th>允许登录？</th>
+    <td><%= @user.active==1 ? '是' : '否' %></td>
+  </tr>
+  <tr>
+    <th>部门</th>
+    <td><%= @user.department %></td>
+    <th>手机</th>
+    <td><%= @user.mobile %></td>
+    <th>邮箱</th>
+    <td><%= @user.email %></td>
+  </tr>
+  <tr>
+    <th>入职时间</th>
+    <td><%= format_date(@user.join_date, :date) %></td>
+    <th>座机</th>
+    <td><%= @user.phone %></td>
+    <th>分机</th>
+    <td><%= @user.phone_ext %></td>
+  </tr>
+  <tr>
+    <th>离职时间</th>
+    <td><%= format_date(@user.leave_date, :date) %></td>
+    <th>离职原因</th>
+    <td colspan="3"><%= @user.leave_reason %></td>
+  </tr>
+</table>

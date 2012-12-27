@@ -1,0 +1,48 @@
+<div class="conten_heading">
+  <div class="page_heading">
+    项目案例
+  </div>
+  <div class="breadcrumb">
+    <a href="/index.php">首页</a>&nbsp;/&nbsp;<a href="/projects.php">成功案例</a>&nbsp;/&nbsp;<%= @title -%>
+  </div>
+</div>
+<div class="content_area">
+  <div class="content_mid_area">
+    <div class="culture_banner">
+      <div class="porfolio_snap_text">
+        <h3>
+          <%= @project.name -%>
+        </h3>
+
+        <p>
+          <%= @project.description -%>
+        </p>
+      </div>
+      <div class="portfolio_snapshot">
+        <div class="portfolio_area">
+          <img src="/projects/<%= @project.pic_path -%>" alt="项目图片" width="487" height="251"></div>
+      </div>
+    </div>
+    <div class="culture_text">
+      <div class="snap_description">
+        <h3>
+          年份
+        </h3>
+        <%= format_date(@project.project_date, :year) -%>
+        <br/>
+        <br/>
+
+        <h3>
+          技术特点
+        </h3>
+        <p>
+          <%= @project.tech_info -%>
+        </p>
+      </div>
+      <div class="snap_brief"><strong>系统配置</strong><br>
+        <%= @project.system_config -%>
+      </div>
+    </div>
+  </div>
+  <div class="content_bottom"></div>
+</div>

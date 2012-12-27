@@ -1,0 +1,25 @@
+<h1 class="title"><%= @title %>
+  <%= button_to_function "修改", "go_url('/cars/register_use/#{@register.id}')", :class => "btn" %>
+</h1>
+<div id="main_div">
+  <div class="conditions">
+    <p><label for="register_user_id">登记人</label>
+      <%= @register.user.username %>
+    </p>
+
+    <p><label for="register_car_id">使用车辆</label>
+      <%= @register.car.name %>
+    </p>
+
+    <p><label for="register_begin_time">使用时间</label>
+      <%= format_date(@register.begin_time, :date) %>
+      ~
+      <%= format_date(@register.end_time, :date) %>
+    </p>
+
+    <p><label for="register_apply_reason">车辆使用备注</label>
+      <%= @register.apply_reason %>
+    </p>
+
+  </div>
+</div>

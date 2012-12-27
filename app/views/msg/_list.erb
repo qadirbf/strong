@@ -1,0 +1,110 @@
+<style type="text/css">
+    .the-table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 3px 0;
+    }
+
+    .the-table th {
+        background-color: #eee;
+        height: 30px;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+
+    .the-table td {
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+    }
+</style>
+<%= form_tag "delete_all" do -%>
+    <%= hidden_field_tag "r_url", params[:action] %>
+    <a href="#" onclick="select_all(true)">全选</a>&nbsp;
+    <a href="#" onclick="select_all(false)">取消选择</a>
+    <input type="button" name="del_all" value="删除选择" onclick="if(confirm('确定删除？')){$('form').attr('action','/msg/delete_all');$('form').submit();}" class="btn"/>
+    <% if @in_inbox %>
+        <%= button_to_function "设置为已读", "set_read()", :class => "btn" -%>
+    <% end %><br/>
+    <%= page_links @messages -%>
+    <table class="the-table" cellpadding="0" cellspacing="0">
+      <tr>
+        <th width="100"><%= "已读?" if @in_inbox %></th>
+        <th width="100">发件人</th>
+        <% if !@in_inbox %>
+            <th width="100">收件人</th>
+        <% end %>
+        <th width="400">主题</th>
+        <th width="200">发送日期</th>
+        <th width="300">操作</th>
+      </tr>
+      <% i = 0 -%>
+      <% @messages.each do |m| %>
+          <% i += 1 -%>
+          <tr>
+            <td>
+              <%= tag "input", {:type => "checkbox", :name => "ids[]", :id => "ids", :value => m.id} %>
+              <% if m.in_inbox? -%>
+                  <img src="<%= m.viewed? ? '/images/read.png' : '/images/unread.png' -%>"/>
+              <% end -%>
+            </td>
+            <td>
+              <% if m.from_id == 0 -%>
+                  <%= m.from_user.username -%>
+              <% else -%>
+                  <%= link_to m.from_user.username, {:action => "new", :to_id => m.from_id} %>
+              <% end -%>
+            </td>
+            <% if !@in_inbox %>
+                <td><%= m.to_names -%></td>
+            <% end %>
+            <td>
+              <%= link_to (m.viewed? ? "<font color='#999999'>#{m.title}</font>".html_safe : "<strong>#{m.title}</strong>".html_safe), {:action => "read", :id => m.id}, {:target => "_blank"} %>
+              <br/>
+              <%= m.viewed? ? "<font color='#999999'>#{m.content}</font>".html_safe : m.content %>
+              </td>
+            <td><%= format_date(m.created_at, :full) -%></td>
+            <td><% if m.in_inbox? %>
+                  <%= link_to "查看", {:action => "read", :id => m.id}, {:target => "_blank"} -%>&nbsp;
+                  <% unless m.from_id==0 -%>
+                      <%= link_to "回复", {:action => "reply", :id => m.id}, {:target => "_blank"} -%>&nbsp;
+                  <% end -%>
+                  <%= link_to "转发", {:action => "forward", :id => m.id}, {:target => "_blank"} -%>&nbsp;
+                  <a href="javascript:if(confirm('确实要删除吗?'))location='delete.php?id=<%= m.id -%>'">删除</a>
+              <% else %>
+                  <%= link_to "查看", {:action => "read", :id => m.id}, {:target => "_blank"} -%>&nbsp;
+                  <% unless m.from_id==0 -%>
+                      <%= link_to "回复", {:action => "reply", :id => m.id}, {:target => "_blank"} -%>&nbsp;
+                  <% end -%>
+                  <a href="javascript:if(confirm('确实要删除吗?'))location='delete.php?id=<%= m.id -%>'">删除</a>
+              <% end %></td>
+          </tr>
+      <% end %>
+    </table>
+    <%= page_links @messages -%>
+<% end -%>
+<%= hidden_field_tag "count", @messages.size -%>
+<script type="text/javascript">
+    var totalNum = $("#count").val();
+    function select_all(s) {
+        $(":checkbox[id='ids']").attr("checked", s);
+    }
+
+    function set_read() {
+        if (!confirm('确定设置为已读？')) {
+            return;
+        }
+        var ids = [];
+        $.each($(":checkbox[id='ids']:checked"), function (i, chk) {
+            var val = $(chk).val();
+            ids.push(val);
+        });
+        $.getJSON("/msg/ajax_set_read", {ids:ids}, function (json) {
+            if (json.success) {
+                alert(json.info);
+                location.reload();
+            } else {
+                alert(json.info);
+            }
+        });
+    }
+</script>

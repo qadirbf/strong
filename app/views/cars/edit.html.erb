@@ -1,0 +1,24 @@
+<h1 class="title"><%= @title %></h1>
+<%= include_datepicker %>
+<%= form_for @car, :url => "/cars/update", :html => {:multipart => true} do |f| %>
+    <%= hidden_field_tag "id", params[:id] -%>
+    <%= errors_for @car %>
+    <table class="blue_tb" width="80%">
+      <tr>
+        <th>车辆名称</th>
+        <td><%= f.text_field :name %></td>
+        <th>购买时间</th>
+        <td><%= f.text_field :buy_time, :value => format_date(@car.buy_time, :date), :class => "datepicker" %></td>
+      </tr>
+      <tr>
+        <th>牌照</th>
+        <td><%= f.text_field :license %></td>
+        <th>上次年检时间</th>
+        <td><%= f.text_field :last_check_time, :value => format_date(@car.last_check_time, :date), :class => "datepicker" %></td>
+      </tr>
+      <tr>
+        <td colspan="4"><%= submit_tag "保存", :class => "btn btn-primary" %>
+          <%= button_to_function "取消", "cancel()", :class => "btn" %></td>
+      </tr>
+    </table>
+<% end %>

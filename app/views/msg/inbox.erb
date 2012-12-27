@@ -1,0 +1,14 @@
+<style type="text/css">
+    #main_div .conditions table td {
+        padding: 2px 5px;
+    }
+</style>
+<div id="main_div">
+  <div class="conditions">
+    <h1 class="title"><%= @title %>
+      <%= button_to_function "撰写新消息", "go_url('#{url_for(:action=>"new")}')", :class => "btn" %>
+    </h1>
+    <% @in_inbox = true %>
+    <%= render :partial => "list" %>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<h1 class="title"><%= @title %>
+  <%= button_to_function "登记使用", "open_url('/cars/register_use')", :class => "btn" %>
+</h1>
+<%= include_datepicker %>
+<%= form_tag "/cars/register_list" do %>
+    <table style="width:80%;">
+      <tr>
+        <td>用户： <%= select_tag :user_id_eq, options_for_select([['', '']]+@users, params[:user_id_eq].to_i) %></td>
+        <td>车辆： <%= select_tag :car_id_eq, options_for_select([['', '']]+@cars, params[:car_id_eq].to_i) %></td>
+        <td>
+        </td>
+      </tr>
+      <tr>
+        <td>使用时间： &ge;<%= text_field_tag :begin_time_gte, params[:begin_time_gte], :class => "datepicker" %>
+          &le;<%= text_field_tag :begin_time_lte, params[:begin_time_lte], :class => "datepicker" %></td>
+        <td>
+          <%= submit_tag "搜索", :class => "btn" %>
+        </td>
+      </tr>
+    </table>
+<% end %>
+
+<%= page_links @registers %>
+<table class="list_tb">
+  <tr class="title">
+    <td>车辆</td>
+    <td>使用人</td>
+    <td>使用状态</td>
+    <td>使用备注</td>
+    <td>起始时间</td>
+    <td>结束时间</td>
+    <td>操作</td>
+  </tr>
+  <% @registers.each do |r| %>
+      <tr>
+        <td><%= link_to r.car.name, :action => "show", :id => r.car_id %></td>
+        <td><%= r.user.username %></td>
+        <td><%= r.using_status -%></td>
+        <td><%= r.apply_reason %></td>
+        <td><%= format_date r.begin_time, :date %></td>
+        <td><%= format_date r.end_time, :date %></td>
+        <td><%= link_to "查看", :action => "register_show", :id => r.id, :format => "php" -%></td>
+      </tr>
+  <% end %>
+</table>
+<%= page_links @registers %>

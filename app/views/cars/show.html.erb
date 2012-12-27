@@ -1,0 +1,21 @@
+<h1 class="title"><%= @title %>
+  <%= button_to_function "修改", "go_url('/cars/edit/#{@car.id}')", :class => "btn" %>
+  <%= button_to_function "删除", "confirm_url('确定删除？','/cars/destroy/#{@car.id}')", :class => "btn" %>
+</h1>
+<table class="blue_tb" width="100%">
+  <tr>
+    <th>车辆名</th>
+    <td><%= @car.name %></td>
+    <th>购买时间</th>
+    <td><%= format_date(@car.buy_time, :date) %></td>
+    <th>牌照</th>
+    <td><%= @car.license %></td>
+  </tr>
+  <tr>
+    <th>上次年检时间</th>
+    <td><%= format_date(@car.last_check_time, :date) %></td>
+    <th>使用状态</th>
+    <td><%= @car.using_status %></td>
+  </tr>
+
+</table>

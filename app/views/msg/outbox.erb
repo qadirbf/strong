@@ -1,0 +1,13 @@
+<style type="text/css">
+    #main_div .conditions table td {
+        padding: 2px 5px;
+    }
+</style>
+<div id="main_div">
+  <div class="conditions">
+    <h1 class="title"><%= @title %>
+    </h1>
+    <% @in_inbox = false %>
+    <%= render :partial => "list" %>
+  </div>
+</div>

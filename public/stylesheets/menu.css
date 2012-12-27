@@ -1,0 +1,106 @@
+.menu {
+    float:right;
+    width:547px;
+    margin-top:36px;
+}
+ul#menu {
+    width: 547px;
+    height: 29px;
+    margin:0;
+    padding:0;
+    background: url('/images/menu_bg.png');
+    position:relative;
+}
+ul#menu li {
+    display:block;
+    height:29px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    top: 0;
+}
+ul#menu li a {
+    display:block;
+    height:29px;
+    outline: none;
+    border:none;
+}
+li#i1 {
+    left: 0px;
+    width: 68px;
+}
+li#i2 {
+    left: 80px;
+    width: 95px;
+}
+li#i3 {
+    left: 190px;
+    width: 88px;
+}
+li#i4 {
+    left: 292px;
+    width: 80px;
+}
+li#i5 {
+    left: 386px;
+    width: 73px;
+}
+li#i6 {
+    left: 472px;
+    width: 75px;
+}
+#i1 a:hover {
+    background: transparent url(/images/menu_bg.png) 0 -39px no-repeat;
+    outline: none;
+    border:none;
+}
+#i2 a:hover {
+    background: transparent url(/images/menu_bg.png) -80px -39px no-repeat;
+    outline: none;
+    border:none;
+}
+#i3 a:hover {
+    background: transparent url(/images/menu_bg.png) -190px -39px no-repeat;
+    outline: none;
+    border:none;
+}
+#i4 a:hover {
+    background: transparent url(/images/menu_bg.png) -292px -39px no-repeat;
+    outline: none;
+    border:none;
+}
+#i5 a:hover {
+    background: transparent url(/images/menu_bg.png) -386px -39px no-repeat;
+    outline: none;
+    border:none;
+}
+#i6 a:hover {
+    background: transparent url(/images/menu_bg.png) -472px -39px no-repeat;
+    outline: none;
+    border:none;
+}
+ul#menu li a {
+    text-indent:-9000px;
+    background-color:transparent;
+    outline: none;
+    border:none;
+}
+.i1_active {
+    background: transparent url(/images/menu_bg.png) 0 -39px no-repeat;
+}
+.i2_active {
+    background: transparent url(/images/menu_bg.png) -80px -39px no-repeat;
+}
+.i3_active {
+    background: transparent url(/images/menu_bg.png) -190px -39px no-repeat;
+}
+.i4_active {
+    background: transparent url(/images/menu_bg.png) -292px -39px no-repeat;
+}
+.i5_active {
+    background: transparent url(/images/menu_bg.png) -386px -39px no-repeat;
+}
+.i6_active {
+    background: transparent url(/images/menu_bg.png) -472px -39px no-repeat;
+}

@@ -1,0 +1,31 @@
+<%= include_datepicker %>
+<div id="main_div">
+  <div class="conditions">
+    <h1 class="title">登记</h1>
+    <%= form_tag :action => 'register_update' do %>
+        <%= errors_for @register %>
+        <%= submit_tag "登记", :class => "btn btn-primary" %> <%= button_to_function "取消", "go_url('/cars/list')", :class => "btn" %>
+
+        <p><label for="register_user_id">登记人</label>
+          <%= select "register", "user_id", @users, {:include_blank => true} %>
+        </p>
+
+        <p><label for="register_car_id">使用车辆</label>
+          <%= select "register", "car_id", @cars, {:include_blank => true} %>
+        </p>
+
+        <p><label for="register_begin_time">使用时间</label>
+          <%= text_field "register", "begin_time", :value => format_date(@register.begin_time, :min), :class => "datepicker" %>
+          ~
+          <%= text_field "register", "end_time", :value => format_date(@register.end_time, :min), :class => "datepicker" %>
+        </p>
+
+        <p><label for="register_apply_reason">车辆使用备注</label>
+          <%= text_area "registe", "apply_reason", :style => "height:100px;width:400px;" %>
+        </p>
+
+        <%= submit_tag "登记", :class => "btn btn-primary" %>
+        <%= button_to_function "取消", "go_url('/cars/list')", :class => "btn" %>
+    <% end %>
+  </div>
+</div>
