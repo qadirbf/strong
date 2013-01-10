@@ -14,23 +14,25 @@
   </div>
 </div>
 <div id="content">
-  <h5>Since 2004, We've been making Web and Mobile Stuff for Start-ups, Non-Profits, and Big Brands.</h5>
+  <h5>
+    始终奉行“实用、可靠、有效益、适度先进”的理念，为客户提供全优的系统解决方案。
+  </h5>
 
   <div class="mid_content">
-    <div class="gossips_area">Our team talking about <span class="gossips_area_acitve">our company</span>,
-      <span class="gossips_area_acitve">our work</span>, <span class="gossips_area_acitve">our clients</span>,
-      <span class="gossips_area_acitve">industry events</span>, and
-      <span class="gossips_area_acitve">each other</span>.<br/>
-      <a href="/blog" target="_blank">More ›</a></div>
+    <div class="gossips_area">思创工程是专业从事自动控制系统集成与服务、建筑智能化系统集成与服务、节能及运维服务的高科技公司。<br/>
+      <a href="/about_us.php" target="_blank">详细 ›</a></div>
     <div class="news_box">
-      <a href="http://www.syxer.com/blog/?p=16" target="_blank">Designing for Facebook: the MyBand Application
-        Redesign</a> 02/10
-      <p><a href="http://www.syxer.com/blog/?p=10" target="_blank">Syxer Paints the Town</a> 02/03</p>
-
-      <p><a href="http://www.syxer.com/blog/?p=22" target="_blank">Refresh Recap: On Regeneration</a> 01/28</p>
+      <font style="color:black;">成功案例</font><br/>
+      <% unless @projects.blank? -%>
+          <% @projects.each do |p| -%>
+              <p>
+                <a href="/projects/show/<%= p.id -%>.php" target="_blank"><%= p.name -%></a> <font style="float:right;"><%= format_date(p.created_at, :date) -%></font>
+              </p>
+          <% end -%>
+      <% end -%>
     </div>
-    <div class="tweets_box"><span class="day">about 1 day ago</span><br/>
-      Syxer delivers a great CMS and product customization portal for a US interior design company.
+    <div class="tweets_box">
+      未来，思创工程将一如既往地以诚为本，以变为道，奉行“更密切、更快捷、更高效、更全面、更专业”的服务理念，继续追求技术创新，提供高水准、全面性、专业化的服务，致力于将公司打造成立足江西，辐射周边，面向全国的行业翘楚。
     </div>
   </div>
 </div>

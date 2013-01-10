@@ -3,7 +3,7 @@ class MainController < ApplicationController
 
   # 首页
   def index
-
+    @projects = Project.find(:all, :select => "id, name, created_at", :limit => 3)
   end
 
   # 公司业务

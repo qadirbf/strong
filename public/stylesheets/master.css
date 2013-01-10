@@ -226,6 +226,10 @@ h5 {
     color: #aaaaaa;
     padding-top: 23px;
 }
+
+.news_box p{
+    text-indent: 0;
+}
 .news_box a {
     text-decoration: none;
     color: #026db4;
@@ -236,10 +240,11 @@ h5 {
 }.tweets_box {
      float: right;
      width: 275px;
-     background-image: url(/images/heading_tweets.gif);
-     background-repeat: no-repeat;
-     background-position: left top;
-     padding-top: 36px;
+     /*background-image: url(/images/heading_tweets.gif);*/
+     /*background-repeat: no-repeat;*/
+     /*background-position: left top;*/
+     /*padding-top: 36px;*/
+    padding-top: 23px;
      line-height: 22px;
  }
 h3 {
@@ -258,7 +263,7 @@ h3 {
     background-position: center top;
     float: left;
     width: 980px;
-    margin-top: 50px;
+    margin-top: 20px;
     height: 103px;
 }
 .footer_address {
@@ -534,6 +539,10 @@ ul#footer_social_icons li a {
     margin-top: 40px;
     margin-left: 15px;
     margin-bottom: 50px;
+}
+
+.culture_text p{
+    line-height: 24px;
 }
 .services_text {
     float: left;
