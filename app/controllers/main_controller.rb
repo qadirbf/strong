@@ -17,6 +17,10 @@ class MainController < ApplicationController
     @projects = Project.find(:all, :limit => 12)
   end
 
+  def recruitment
+
+  end
+
   # 关于我们
   def about_us
 

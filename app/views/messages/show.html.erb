@@ -1,0 +1,28 @@
+<h1 class="title"><%= @title %></h1>
+<%= button_to_function "删除", "confirm_url('确定删除？','/messages/destroy/#{@message.id}')", :class => "btn" %>
+<table>
+  <tr>
+    <th>
+      姓名：
+    </th>
+    <td>
+      <%= @message.name -%>&nbsp;&nbsp;于 <%= format_date(@message.created_at, :full) -%>
+    </td>
+  </tr>
+  <tr>
+    <th>电话：</th>
+    <td><%= @message.phone -%></td>
+  </tr>
+  <tr>
+    <th>邮箱：</th>
+    <td><%= mail_to @message.email -%></td>
+  </tr>
+  <tr>
+    <th>
+      内容：
+    </th>
+    <td>
+      <%= @message.message -%>
+    </td>
+  </tr>
+</table>
