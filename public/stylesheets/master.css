@@ -224,7 +224,7 @@ h5 {
     margin-left: 21px;
     font-size: 12px;
     color: #aaaaaa;
-    padding-top: 23px;
+    /*padding-top: 23px;*/
 }
 
 .news_box p{
@@ -244,7 +244,7 @@ h5 {
      /*background-repeat: no-repeat;*/
      /*background-position: left top;*/
      /*padding-top: 36px;*/
-    padding-top: 23px;
+    /*padding-top: 23px;*/
      line-height: 22px;
  }
 h3 {
@@ -308,7 +308,7 @@ h3 {
 }
 .footer_social_icons {
     float:right;
-    width:188px;
+    /*width:188px;*/
     margin-top:28px;
 }
 ul#footer_social_icons {
@@ -327,6 +327,11 @@ ul#footer_social_icons li {
     list-style: none;
     position: absolute;
     top: 0;
+}
+
+.footer_social_icons dd{
+    margin-top: 5px;
+
 }
 ul#footer_social_icons li a {
     display:block;
