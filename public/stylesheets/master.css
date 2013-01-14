@@ -224,7 +224,11 @@ h5 {
     margin-left: 21px;
     font-size: 12px;
     color: #aaaaaa;
-    padding-top: 23px;
+    /*padding-top: 23px;*/
+}
+
+.news_box p{
+    text-indent: 0;
 }
 .news_box a {
     text-decoration: none;
@@ -236,10 +240,11 @@ h5 {
 }.tweets_box {
      float: right;
      width: 275px;
-     background-image: url(/images/heading_tweets.gif);
-     background-repeat: no-repeat;
-     background-position: left top;
-     padding-top: 36px;
+     /*background-image: url(/images/heading_tweets.gif);*/
+     /*background-repeat: no-repeat;*/
+     /*background-position: left top;*/
+     /*padding-top: 36px;*/
+    /*padding-top: 23px;*/
      line-height: 22px;
  }
 h3 {
@@ -258,7 +263,7 @@ h3 {
     background-position: center top;
     float: left;
     width: 980px;
-    margin-top: 50px;
+    margin-top: 20px;
     height: 103px;
 }
 .footer_address {
@@ -303,7 +308,7 @@ h3 {
 }
 .footer_social_icons {
     float:right;
-    width:188px;
+    /*width:188px;*/
     margin-top:28px;
 }
 ul#footer_social_icons {
@@ -322,6 +327,11 @@ ul#footer_social_icons li {
     list-style: none;
     position: absolute;
     top: 0;
+}
+
+.footer_social_icons dd{
+    margin-top: 5px;
+
 }
 ul#footer_social_icons li a {
     display:block;
@@ -534,6 +544,10 @@ ul#footer_social_icons li a {
     margin-top: 40px;
     margin-left: 15px;
     margin-bottom: 50px;
+}
+
+.culture_text p{
+    line-height: 24px;
 }
 .services_text {
     float: left;
