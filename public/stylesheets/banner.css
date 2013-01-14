@@ -11,22 +11,24 @@
     text-align: center;
 }
 .r1 {
-    background-image: url("/images/banner_health.jpg");
+    /*background-image: url("/images/banner_health.jpg");*/
+    background-image: url("/images/index2.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
 .r2 {
-    background-image: url("/images/banner_daybreak.jpg");
+    /*background-image: url("/images/banner_daybreak.jpg");*/
+    background-image: url("/images/qingyun.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
 .r3 {
-    background-image: url("/images/banner_splash.jpg");
+    background-image: url("/images/niuhang.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
 .r4 {
-    background-image: url("/images/banner_mobile.jpg");
+    background-image: url("/images/leping.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
@@ -91,6 +93,7 @@ div.fadenav a.current {
     text-decoration:none;
 }
 .banner_text a:hover {
-    color:#FFFFFF;
+    /*color:#FFFFFF;*/
+    color:#FF8000;
     text-decoration: underline;
 }

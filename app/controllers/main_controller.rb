@@ -31,5 +31,10 @@ class MainController < ApplicationController
 
   end
 
+  # 喻平精神
+  def spirit
+
+  end
+
 
 end

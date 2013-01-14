@@ -58,6 +58,7 @@ StrongSystem::Application.routes.draw do
   match "projects.php", :controller => 'main', :action => "projects", :format => "php"
   match "recruitment.php", :controller => 'main', :action => "recruitment", :format => "php"
   match "contact.php", :controller => 'main', :action => "contact", :format => "php"
+  match "spirit.php", :controller => 'main', :action => "spirit", :format => "php"
 
   match "login.php", :controller => 'users', :action => "login"
   match "logout", :controller => 'users', :action => "logout"
