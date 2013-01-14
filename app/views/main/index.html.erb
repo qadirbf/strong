@@ -1,7 +1,7 @@
 <script type="text/javascript" src="/jquery/js/validation2.js"></script>
 <div class="main_banner">
   <div id="transitionEffect">
-    <div class="slide r1">
+    <div class="slide r1" style="background-position: 0 -100px;">
       <div class="banner_text"><a href="/spirit.php">“喻平精神”</a></div>
     </div>
     <div class="slide r2">
@@ -28,9 +28,12 @@
       <% unless @projects.blank? -%>
           <% @projects.each do |p| -%>
               <p>
-                <a href="/projects/show/<%= p.id -%>.php" target="_blank"><%= p.name -%></a> <font style="float:right;"><%= format_date(p.created_at, :date) -%></font>
+                <a href="/projects/show/<%= p.id -%>.php" target="_blank"><%= p.name -%></a>
+                <font style="float:right;"><%= format_date(p.created_at, :date) -%></font>
               </p>
           <% end -%>
+      <% else -%>
+          <p>暂无数据</p>
       <% end -%>
     </div>
     <div class="tweets_box">

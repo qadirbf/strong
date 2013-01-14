@@ -27,7 +27,8 @@ div#wrapper {
     margin-top: 25px;
 }.main_banner {
      float: left;
-     height: 428px;
+     /*height: 428px;*/
+     height: 308px;
      width: 980px;
      margin-top: 28px;
  }
