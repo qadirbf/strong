@@ -7,7 +7,11 @@ class MessagesController < AdminBaseController
     Message.create({:name => params[:User], :email => params[:Email],
                     :message => params[:Message], :phone => params[:Phone],
                     :company => params[:Company], :status_id => 0})
-    redirect_to "/#{params[:url]}.php"
+
+    respond_to do |format|
+      format.html { redirect_to "/#{params[:url]}.php" }
+    end
+    #redirect_to "/#{params[:url]}.php"
   end
 
   def list

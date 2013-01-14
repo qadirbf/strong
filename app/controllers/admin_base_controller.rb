@@ -2,7 +2,7 @@
 class AdminBaseController < ApplicationController
 
   protect_from_forgery
-  before_filter :authorize, :except => [:logout, :show]
+  before_filter :authorize, :except => [:logout, :show, :leave_message]
 
   helper_method :current_user, :logged_in?
 
