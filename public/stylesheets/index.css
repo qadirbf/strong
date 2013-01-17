@@ -1,0 +1,164 @@
+/*  
+Theme Name: Airos Chou
+Theme URI: http://www.sunflowamedia.com
+Description: Web Design examples
+*/
+
+/*--------------------------------------------
+container
+--------------------------------------------*/
+div.examples_body {
+    float: right;
+    width: 560px;
+    margin: 36px auto 0 auto;
+    /*clear: both;*/
+    overflow: hidden;
+}
+
+h2.title_name {
+    font-family: normal Georgia, 'Times New Roman', Times, serif;
+    font-weight: normal;
+    font-size: 4em;
+    padding: 50px 0 20px 0;
+    text-align: center;
+}
+
+h2.title_name span {
+    font-family: normal Georgia, 'Times New Roman', Times, serif;
+    color: #AAA;
+    font-size: 0.9em;
+}
+
+h2.title_name small {
+    color: #AAAAAA;
+    display: block;
+    font-family: normal Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0.2em;
+    letter-spacing: 1.0em;
+    text-transform: uppercase;
+}
+
+div.examples_body h3 {
+    color: #555;
+    font-size: 130%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+p.demo_btn {
+    width: 750px;
+    margin: 30px auto;
+    font-size: 0;
+    text-indent: -9999px;
+    clear: both;
+    overflow: hidden;
+}
+
+p.demo_btn a {
+    width: 160px;
+    height: 41px;
+    float: right;
+    background: url(/images/Download_Button.gif) no-repeat;
+}
+
+p.demo_btn a:hover {
+    background: url(/images/Download_Button_o.gif) no-repeat;
+}
+
+/*--------------------------------------------*/
+div.examples_body_wrap h3 {
+    color: #f9f66d;
+    font-size: 130%;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    background: url(http://sunflowamedia.com/images/solid-line-news.gif) repeat-x bottom;
+}
+
+div.examples_body_wrap {
+    width: 750px;
+    margin: 50px auto 0 auto;
+    clear: both;
+}
+
+ul.topnav {
+    position: absolute;
+    width: 560px;
+    /*padding: 0 0 200px 0;*/
+    float: left;
+    background: #DBF0F5;
+    /*background: url(/images/topnav_bg1.gif) repeat-x;*/
+}
+
+ul.topnav li {
+    float: left;
+    margin: 0;
+    padding: 0 8px 0 10px;
+    position: relative; /*--Declare X and Y axis base for sub navigation--*/
+    display: inline;
+}
+
+ul.topnav li a {
+    padding: 10px 5px;
+    color: #2E75A8;
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    text-decoration: none;
+    float: left;
+}
+
+ul.topnav li a:hover {
+    -moz-border-radius: 3px; /*--CSS3 Rounded Corners--*/
+    -khtml-border-radius: 3px; /*--CSS3 Rounded Corners--*/
+    -webkit-border-radius: 3px; /*--CSS3 Rounded Corners--*/
+}
+
+ul.topnav li span {
+    /*--Drop down trigger styles--*/
+    width: 17px;
+    height: 35px;
+    float: left;
+    background: url(/images/subnav_btn.gif) no-repeat center top;
+}
+
+ul.topnav li span.subhover {
+    /*--Hover effect for trigger--*/
+    background-position: center bottom;
+    cursor: pointer;
+}
+
+ul.topnav li ul.subnav {
+    width: 170px;
+    position: absolute; /*--Important - Keeps subnav from affecting main navigation flow--*/
+    left: 0;
+    top: 35px;
+    background: #CFE6F0;
+    margin: 0;
+    padding: 0;
+    display: none;
+    float: left;
+    border: 1px solid #CFE6F0;
+}
+
+ul.topnav li ul.subnav li {
+    width: 170px;
+    margin: 0;
+    z-index: 1000;
+    padding: 0;
+    border-top: 1px solid #CFE6F0; /*--Create bevel effect--*/
+    border-bottom: 1px solid #CFE6F0; /*--Create bevel effect--*/
+    clear: both;
+}
+
+html ul.topnav li ul.subnav li a {
+    width: 145px;
+    float: left;
+    background-color: #E8F5F8;
+    padding-left: 20px;
+    font-size: 0.9em;
+}
+
+html ul.topnav li ul.subnav li a:hover {
+    /*--Hover effect for subnav links--*/
+    background-color: #AFD5E7;
+}
