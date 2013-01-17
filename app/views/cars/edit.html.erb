@@ -8,7 +8,7 @@
         <th>车辆名称</th>
         <td><%= f.text_field :name %></td>
         <th>购买时间</th>
-        <td><%= f.text_field :buy_time, :value => format_date(@car.buy_time, :date), :class => "datepicker" %></td>
+        <td><%= f.text_field :buy_time, :value => format_date(@car.buy_time, :date), :class => "dtimepicker" %></td>
       </tr>
       <tr>
         <th>牌照</th>
