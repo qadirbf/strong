@@ -13,7 +13,12 @@ body {
 
 p{
     line-height: 22px;
+    padding-right: 20px;
     text-indent: 2em;
+}
+
+img{
+    border: none;
 }
 
 div#wrapper {
@@ -264,7 +269,7 @@ h3 {
     background-position: center top;
     float: left;
     width: 980px;
-    margin-top: 20px;
+    margin-top: 10px;
     height: 103px;
 }
 .footer_address {
@@ -522,7 +527,7 @@ ul#footer_social_icons li a {
     cursor: pointer;
 }
 .culture_banner {
-    float: left;
+    /*float: left;*/
     width: 902px;
     margin-top: 12px;
     margin-left: 15px;
@@ -821,4 +826,71 @@ h4 {
     position:absolute;
     right:0px;
     top:50px;
+}
+
+#box_left {
+    width: 250px;
+    float: left;
+    margin-left: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#box_right {
+    width: 669px;
+    float: right;
+    margin-top: 20px;
+}
+#box_left_sub2{
+    margin-top: 10px;
+    margin-left: -1px;
+}
+
+
+ul {
+    padding-bottom: 0px;
+    list-style-type: none;
+    margin: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    list-style-image: none;
+    padding-top: 0px;
+}
+
+li.menu-none a {
+    line-height: 32px;
+    padding-left: 32px;
+    margin: 2px 0px;
+    display: block;
+    background: url(/images/first-bg.gif) no-repeat 0px 0px;
+    height: 32px;
+    color: #005793;
+    width: 196px;
+    text-decoration: none;
+}
+
+li.menu-none a:hover, li.menu-none a.current {
+    line-height: 32px;
+    margin: 2px 0px;
+    width: 192px;
+    background: url(/images/first-bg.gif) no-repeat 0px -32px;
+    height: 32px;
+    color: #fff;
+    text-decoration: none;
+}
+
+li.menu-none a.current:hover {
+    line-height: 32px;
+    margin: 2px 0px;
+    width: 192px;
+    background: url(/images/first-bg.gif) no-repeat 0px -32px;
+    height: 32px;
+    color: #fff;
+}
+
+li.menu-none a.visited{
+    padding-left: 32px;
+    color: #013771;
+    font-size: 12px;
+    text-decoration: none;
 }

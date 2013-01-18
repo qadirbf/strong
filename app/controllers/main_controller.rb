@@ -1,6 +1,12 @@
 #encoding:utf-8
 class MainController < ApplicationController
 
+  before_filter :get_title
+
+  def get_title
+    @title
+  end
+
   # 首页
   def index
     @projects = Project.find(:all, :select => "id, name, created_at", :limit => 3)
@@ -23,7 +29,7 @@ class MainController < ApplicationController
 
   # 关于我们
   def about_us
-
+    @title = "关于我们"
   end
 
   # 联系我们
@@ -31,10 +37,29 @@ class MainController < ApplicationController
 
   end
 
-  # 喻平精神
+  # 公司精神
   def spirit
 
   end
 
+  def introduction
+    @title = "公司简介"
+  end
+
+  def culture
+    @title = "公司文化"
+  end
+
+  def organization
+    @title = "组织机构"
+  end
+
+  def honor
+    @title = "资质荣誉"
+  end
+
+  def ceo
+    @title = "总经理致辞"
+  end
 
 end
