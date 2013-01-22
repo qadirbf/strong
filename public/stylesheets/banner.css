@@ -12,24 +12,23 @@
     text-align: center;
 }
 .r1 {
-    /*background-image: url("/images/banner_health.jpg");*/
-    background-image: url("/images/index4.jpg");
+    background-image: url("/images/zhiye.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
 .r2 {
     /*background-image: url("/images/banner_daybreak.jpg");*/
-    background-image: url("/images/qingyun.jpg");
+    background-image: url("/images/green.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
 .r3 {
-    background-image: url("/images/niuhang.jpg");
+    background-image: url("/images/zhineng.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
 .r4 {
-    background-image: url("/images/leping.jpg");
+    background-image: url("/images/xiandai.jpg");
     background-repeat: no-repeat;
     background-position: left top;
 }
