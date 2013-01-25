@@ -1,0 +1,84 @@
+<style>form select, form input[type=text] {
+    width: 120px;
+}
+
+.firm_ul {
+    list-style: none;
+    width: 600px;
+}
+
+.firm_ul li {
+    width: 500px;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.ul_l_span {
+    float: left;
+}
+
+.span_p_t {
+    padding-left: 50px;
+}
+</style>
+<h1 class="title"><%= @title %>
+  <%= button_to_function "添加一级业务分类", "go_url('/category/add.php')", :class => "btn" %>
+  <%= button_to_function "添加二级业务分类", "go_url('/category/add_sub_category.php')", :class => "btn" %>
+</h1>
+
+<ul class="firm_ul">
+  <% @categories.each do |c| %>
+      <li id="li_f_<%= c.id -%>">
+        <span class="ul_l_span" id="f_<%= c.id -%>"><%= c.name %></span>
+        <span style="float:right;">
+          <%= link_to_function "编辑", "edit('f_t', #{c.id})" -%>&nbsp;&nbsp;
+          <%= link_to "删除", {:action => "delete", :type => "category", :id => c.id}, :confirm => "Are you sure?" -%>&nbsp;&nbsp;
+          <%= link_to_function "查看二级业务分类", "show_sub_categories(this, #{c.id})" %>
+        </span>
+      </li>
+  <% end %>
+</ul>
+
+
+<script type="text/javascript">
+    function edit(type, id) {
+        if (type == "f_t") {
+            var span = $("#f_" + id);
+        }
+        if (type == "c_p") {
+            var span = $("#c_" + id);
+        }
+        var name = span.html();
+        span.html("");
+        var text_id = "text_" + id;
+        span.append($("<input class='input-xlarge' size='30'/>").attr("id", text_id).val(name));
+        span.append($("<input type='button' value='确定' style='width:60px;' onclick='update_type(this)'/>"))
+    }
+
+    function update_type(obj) {
+        var id = $(obj).parent().attr("id");
+        var name = $(obj).prev().val();
+        $.post("<%= url_for(:action=>"update", :controller => :category) -%>", { id:id, name:name },
+                function (data) {
+                    alert("更新成功！");
+                    init_span(id, name);
+                })
+    }
+
+    function init_span(span_id, name) {
+        var span = $("#" + span_id);
+        span.html(name);
+    }
+
+    function show_sub_categories(obj, cat_id) {
+        var li = $(obj).parent().parent();
+        var li_id = li.attr("id");
+        var div = $("<div style='display: none;'/>").attr("id", "div_" + li_id);
+        div.load("/category/get_sub_cats", {id:cat_id}, function () {
+            li.parent().append(div);
+            li.after($("#div_" + li_id).html());
+        });
+        $("#div_" + li_id).remove();
+    }
+
+</script>

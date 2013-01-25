@@ -11,6 +11,12 @@
         <td><%= f.text_field :project_date, :value => format_date(@project.project_date, :date), :class => "datepicker" %></td>
       </tr>
       <tr>
+        <th>一级类型</th>
+        <td><%= f.select :category_id, @categories, {:include_blank => true} %></td>
+        <th>二级类型</th>
+        <td id="sub_td"><%= f.select :sub_category_id, @sub_categories, {:include_blank => true} %></td>
+      </tr>
+      <tr>
         <th>技术信息</th>
         <td><%= f.text_area :tech_info, :style => "width:400px;height:100px;" %></td>
         <th>项目描述</th>
@@ -38,3 +44,13 @@
       </tr>
     </table>
 <% end %>
+<script>
+    $(function () {
+        $('#project_category_id').change(function () {
+            var tid = $(this).val(), category_td = $('#sub_td')
+            if ($.trim(tid) == '') return
+            category_td.html($('<span>').text('Loading...').css('color', 'red'))
+            category_td.load("/category/get_sub_categories", {id:tid, object:'category', field:'category_id'})
+        })
+    })
+</script>

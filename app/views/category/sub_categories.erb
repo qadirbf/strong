@@ -1,0 +1,11 @@
+<% unless @sub_categories.blank? -%>
+    <% @sub_categories.each do |c| -%>
+        <li>
+          <span class="span_p_t" id="c_<%= c.id -%>"><%= c.name %></span>
+        <span style="float:right;">
+          <%= link_to_function "编辑", "edit('c_p', #{c.id})" -%>&nbsp;&nbsp;
+          <%= link_to "删除", {:action => "delete", :type => "sub_category", :id => c.id}, :confirm => "Are you sure?" -%>
+        </span>
+        </li>
+    <% end -%>
+<% end -%>

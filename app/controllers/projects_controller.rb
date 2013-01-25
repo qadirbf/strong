@@ -18,6 +18,8 @@ class ProjectsController < AdminBaseController
       @title = "添加项目"
       @project = Project.new
     end
+    @categories = Category.all.map { |c| [c.name, c.id] }
+    @sub_categories = SubCategory.all.map { |c| [c.name, c.id] }
   end
 
   def update
