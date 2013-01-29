@@ -48,7 +48,7 @@ module ApplicationHelper
   end
 
   def page_links(obj)
-    will_paginate obj, :params => page_params(params), :previous_label => "<<", :next_label => ">>"
+    will_paginate obj, :params => page_params(params), :previous_label => "上一页", :next_label => "下一页"
   end
 
   def page_params(p)
@@ -58,6 +58,18 @@ module ApplicationHelper
       pa[k] = v if k!='controller'&&k!='page'&&k!='action'
     }
     pa
+  end
+
+  def action_name(name)
+    if ["introduction", "ceo", "organization", "culture", "honor"].include?(name.to_s)
+      return "yewu"
+    end
+    if ["projects"].include?(name.to_s)
+      return "projects"
+    end
+    if ["services", "case_list"].include?(name.to_s)
+      return "services"
+    end
   end
 
 end

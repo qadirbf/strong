@@ -4,7 +4,7 @@
 
   </div>
   <div class="breadcrumb">
-    <a href="index.php">首页</a>&nbsp;/&nbsp;<%= @title -%>
+    <a href="index.php">首页</a>&nbsp;/&nbsp;<a href="/services.php"><%= @m_title -%></a>&nbsp;/&nbsp;<%= @title -%>
   </div>
 </div>
 <div class="content_area">
@@ -13,7 +13,7 @@
       <img src="/images/culture.jpg" alt="Our Culture" width="902" height="238">
     </div>
 
-    <%= render :partial => "left_menu" -%>
+    <%= render :partial => "/main/left_menu" -%>
     <div id="box_right">
       <h3 style="top: -2px; left: -2px; font-size: 14px;border-bottom: 1px solid #DBDBDB;width: 98%;">
         公司业务

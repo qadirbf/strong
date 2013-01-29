@@ -1,20 +1,33 @@
 <div id="box_left">
   <div id="box_left_sub1">
     <ul class="list2">
-      <li class="menu-none">
-        <a href="/introduction.php" title="公司简介" class="<%= "current" if params[:action]=="introduction" -%>">公司简介</a>
-      </li>
-      <li class="menu-none">
-        <a href="/ceo.php" title="总经理致辞" class="<%= "current" if params[:action]=="ceo" -%>">总经理致辞</a>
-      </li>
-      <li class="menu-none">
-        <a href="/organization.php" title="组织机构" class="<%= "current" if params[:action]=="organization" -%>">组织机构</a>
-      </li>
-      <li class="menu-none">
-        <a href="/culture.php" title="企业文化" class="<%= "current" if params[:action]=="culture" -%>">企业文化</a></li>
-      <li class="menu-none">
-        <a href="/honor.php" title="资质荣誉" class="<%= "current" if params[:action]=="honor" -%>">资质荣誉</a>
-      </li>
+      <% if action_name(params[:action]) == "yewu" -%>
+          <li class="menu-none">
+            <a href="/introduction.php" title="公司简介" class="<%= "current" if params[:action]=="introduction" -%>">公司简介</a>
+          </li>
+          <li class="menu-none">
+            <a href="/ceo.php" title="总经理致辞" class="<%= "current" if params[:action]=="ceo" -%>">总经理致辞</a>
+          </li>
+          <li class="menu-none">
+            <a href="/organization.php" title="组织机构" class="<%= "current" if params[:action]=="organization" -%>">组织机构</a>
+          </li>
+          <li class="menu-none">
+            <a href="/culture.php" title="企业文化" class="<%= "current" if params[:action]=="culture" -%>">企业文化</a></li>
+          <li class="menu-none">
+            <a href="/honor.php" title="资质荣誉" class="<%= "current" if params[:action]=="honor" -%>">资质荣誉</a>
+          </li>
+      <% elsif action_name(params[:action]) == "projects" -%>
+          <li class="menu-none">
+            <a href="/projects.php" title="项目展示" class="<%= "current" if params[:action]=="projects" -%>">项目展示</a>
+          </li>
+      <% elsif action_name(params[:action]) == "services" -%>
+          <% cats = Category.where("").order("order_num desc")||[] -%>
+          <% cats.each do |cat| -%>
+              <li class="menu-none">
+                <a href="/projects/case_list?cat=<%= cat.id -%>" title="<%= cat.name -%>" class="<%= "current" if params[:action]=="case_list" && params[:cat].to_i==cat.id -%>"><%= cat.name -%></a>
+              </li>
+          <% end -%>
+      <% end -%>
     </ul>
   </div>
   <div id="box_left_sub2">

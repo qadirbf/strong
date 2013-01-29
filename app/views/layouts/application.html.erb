@@ -10,7 +10,7 @@
   <link href="/stylesheets/index.css" rel="stylesheet" type="text/css"/>
   <script type="text/javascript" src="/jquery/js/jquery.min.js"></script>
   <script type="text/javascript" src="/jquery/js/fade-plugin.js"></script>
-  <script type="text/javascript" src="/jquery/script.js" ></script>
+  <script type="text/javascript" src="/jquery/script.js"></script>
   <script src="/jquery/js/banner.js" type="text/javascript"></script>
   <script src="/jquery/js/jquery.tools.min.js" type="text/javascript"></script>
   <% if params[:action] == "contact" -%>
@@ -53,23 +53,13 @@
       <li>
         <a href="/services.php">主营业务</a>
         <ul class="subnav">
-          <li><a href="#">自动化</a></li>
-          <li><a href="#">智能化</a></li>
-          <li><a href="#">信息化</a></li>
-          <li><a href="#">节能及维保</a></li>
+          <% cats = Category.where("").order("order_num desc")||[] -%>
+          <% cats.each do |cat| -%>
+              <li><a href="/projects/case_list?cat=<%= cat.id -%>"><%= cat.name -%></a></li>
+          <% end -%>
         </ul>
       </li>
       <li><a href="/projects.php">典型案例</a>
-        <ul class="subnav">
-          <li><a href="#">供水</a></li>
-          <li><a href="#">污水处理</a></li>
-          <li><a href="#">电排站</a></li>
-          <li><a href="#">下穿隧道</a></li>
-          <li><a href="#">工业自控</a></li>
-          <li><a href="#">建筑智能</a></li>
-          <li><a href="#">节能服务</a></li>
-          <li><a href="#">维保服务</a></li>
-        </ul>
       </li>
       <li><a href="/recruitment.php">招贤纳士</a></li>
       <li><a href="/contact.php">联系我们</a></li>

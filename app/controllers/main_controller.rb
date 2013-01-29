@@ -14,13 +14,14 @@ class MainController < ApplicationController
 
   # 公司业务
   def services
-
+    @title = "主营业务"
+    @projects = Project.where("").order("order_num desc,created_at desc").paginate :per_page => 6, :page => params[:page]
   end
 
   # 成功案例
   def projects
     @title = "成功案例"
-    @projects = Project.find(:all, :limit => 12)
+    #@projects = Project.find(:all, :limit => 12)
   end
 
   def recruitment

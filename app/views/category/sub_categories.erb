@@ -1,10 +1,12 @@
 <% unless @sub_categories.blank? -%>
     <% @sub_categories.each do |c| -%>
         <li>
-          <span class="span_p_t" id="c_<%= c.id -%>"><%= c.name %></span>
+          <span class="span_p_t" id="s_<%= c.id -%>"><%= c.name %></span>
+          <span>(<%= c.order_num.to_i -%>)</span>
         <span style="float:right;">
-          <%= link_to_function "编辑", "edit('c_p', #{c.id})" -%>&nbsp;&nbsp;
+          <%= link_to_function "编辑", "edit('s_p', #{c.id})" -%>&nbsp;&nbsp;
           <%= link_to "删除", {:action => "delete", :type => "sub_category", :id => c.id}, :confirm => "Are you sure?" -%>
+          <%= link_to "新窗口编辑", :action => "edit", :id => c.id, :type => "sub" -%>
         </span>
         </li>
     <% end -%>

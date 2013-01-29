@@ -3,25 +3,155 @@
     我们用心做好每一个项目
   </div>
   <div class="breadcrumb">
-    <a href="index.php">首页</a>&nbsp;/&nbsp;成功案例
+    <a href="index.php">首页</a>&nbsp;/&nbsp;项目展示
   </div>
 </div>
+<style>
+    ul.projects_ul {
+        width: 660px;
+        height: auto;
+        display: inline-block;
+    }
+
+    ul.projects_ul li {
+        width: 330px;
+        height: 15px;
+        margin-top: 8px;;
+        float: left;
+    }
+
+    #box_right p {
+        font-weight: bold;
+        text-indent: 0;
+        margin-bottom: 0;
+    }
+</style>
 <div class="content_area">
   <div class="content_mid_area">
-    <div class="content_text_area">
-      <% unless @projects.blank? -%>
-          <% tag = '' -%>
-          <% @projects.each_with_index do |p, index| -%>
-              <% tag = '3' if (index + 1)%3 == 2 -%>
-              <% tag = '2' if (index + 1)%3 == 0 -%>
-              <div class="thumb_portfolio<%= tag -%>">
-                <a href="/projects/show/<%= p.id -%>.php">
-                  <img src="/projects/<%= p.index_pic -%>" width="275" height="228" border="0" class="vtip" title="<%= p.name -%>"></a>
-              </div>
-          <% end -%>
-      <% else -%>
-          暂无数据
-      <% end -%>
+    <div class="culture_banner">
+      <img src="/images/culture.jpg" alt="Our Culture" width="902" height="238">
+    </div>
+
+    <%= render :partial => "left_menu" -%>
+    <div id="box_right">
+      <h3 style="top: -2px; left: -2px; font-size: 14px;border-bottom: 1px solid #DBDBDB;">
+        项目展示
+      </h3>
+
+      <p>供水工程</p>
+      <ul class="projects_ul">
+        <li>江西洪城水业股份有限公司青云水厂</li>
+        <li>江西洪城水业股份有限公司牛行水厂</li>
+        <li>江西洪城水业股份有限公司长堎水厂</li>
+        <li>江西洪城水业股份有限公司朝阳水厂</li>
+        <li>赣州市水务局第二水厂</li>
+        <li>九江市自来水公司第三水厂</li>
+        <li>上饶市自来水公司</li>
+        <li>萍乡市自来水公司白源水厂</li>
+        <li>南昌县供水有限责任公司昌南水厂</li>
+        <li>南康市自来水公司</li>
+        <li>樟树市自来水公司地表水厂</li>
+        <li>峡江县自来水公司</li>
+        <li>广丰县自来水公司第二水厂</li>
+        <li>余干县自来水公司第二水厂</li>
+        <li>瑞昌市供水公司第二水厂</li>
+        <li>乐平润泉自来水公司</li>
+        <li>宜春袁州区自来水公司</li>
+        <li>信丰县自来水公司</li>
+        <li>修水县自来水公司</li>
+        <li>永修县自来水公司</li>
+        <li>星子县自来水公司</li>
+      </ul>
+
+      <p>污水处理</p>
+      <ul class="projects_ul">
+        <li>南昌市青山湖污水处理厂</li>
+        <li>南昌朝阳洲污水处理厂</li>
+        <li>赣州市白塔上污水处理厂</li>
+        <li>新余市城东污水处理厂</li>
+        <li>萍乡污水处理厂</li>
+        <li>南丰县污水处理厂</li>
+        <li>万载县污水处理厂</li>
+        <li>安义县污水处理厂</li>
+        <li>靖安县污水处理厂</li>
+        <li>奉新县污水处理厂</li>
+        <li>桑海污水处理厂</li>
+        <li>余江县污水处理厂</li>
+        <li>资溪县污水处理厂</li>
+        <li>黎川县污水处理厂</li>
+        <li>临川污水处理厂</li>
+        <li>铜鼓县污水处理厂</li>
+        <li>横峰县污水处理厂</li>
+        <li>弋阳县污水处理厂</li>
+        <li>乐安县污水处理厂</li>
+        <li>宜黄县污水处理厂</li>
+        <li>广丰县污水处理厂</li>
+        <li>宜丰县污水处理厂</li>
+      </ul>
+
+      <p>电排站</p>
+      <ul class="projects_ul">
+        <li>南昌市鱼尾电排站</li>
+        <li>南昌市吴公庙电排站</li>
+        <li>南昌市青山湖排涝总站</li>
+        <li>南昌市朝阳1号电排站</li>
+        <li>南昌市南塘湖电排站</li>
+        <li>南昌市施尧路泵站</li>
+        <li>南昌县红旗排涝总站</li>
+        <li>南昌县象湖排涝站</li>
+        <li>九江龙开水利</li>
+      </ul>
+
+      <p>隧道</p>
+      <ul class="projects_ul">
+        <li>南昌市青山湖隧道</li>
+        <li>南昌市洛阳路隧道</li>
+        <li>南昌市滕王阁下穿隧道</li>
+      </ul>
+
+      <p>工业自控</p>
+      <ul class="projects_ul">
+        <li>江西江钨钴业有限公司</li>
+        <li>江西江氨化学工业有限公司</li>
+        <li>江西昌九农科化工有限公司</li>
+        <li>江西铜业集团</li>
+        <li>江铃集团</li>
+        <li>南昌钢铁有限责任公司</li>
+        <li>南昌印钞有限公司</li>
+        <li>九江化纤有限公司</li>
+        <li>江苏如东南天农科化工有限公司</li>
+        <li>安徽铜陵金隆铜业有限公司</li>
+        <li>湖北大冶有色铜冶炼有限公司</li>
+      </ul>
+
+      <p>智能化工程</p>
+      <ul class="projects_ul">
+        <li>南昌城投大厦智能化工程</li>
+        <li>南昌市湾里区培训中心智能化工程</li>
+        <li>南昌大学第二附属医院门诊科技楼弱电工程</li>
+        <li>赣州自然博物馆弱电智能化系统集成</li>
+        <li>江西广电网络公司新建办公楼公用设备控制系统</li>
+        <li>南昌市第十九中学智能化工程</li>
+        <li>江西高氏置业发展有限公司维也纳音乐花园智能化系统</li>
+        <li>沿海绿色家园发展有限公司沿海丽水佳园智能系统工程</li>
+        <li>江西江氨化学工业有限公司物流仓库电视监控系统</li>
+      </ul>
+
+      <p>市政工程</p>
+      <ul class="projects_ul">
+        <li>南昌市滕王阁下穿隧道电气、监控安装工程</li>
+        <li>南昌市洛阳路立交桥下穿隧道电气安装工程</li>
+        <li>南昌市青山湖下穿隧道计算机控制系统</li>
+        <li>南昌市火车站西广场机电维护保养</li>
+        <li>南昌市麦园垃圾处理场工艺设备、电气仪表自动化总承</li>
+        <li>南昌市生活饮用水源水质自动监测系统工程总承</li>
+      </ul>
+
+      <p>维保</p>
+      <ul class="projects_ul">
+        <li>南昌市火车站西广场机电维护保养</li>
+      </ul>
+      <br/><br/>
     </div>
   </div>
   <div class="content_bottom"></div>

@@ -7,7 +7,7 @@ class CategoryController < AdminBaseController
 
   def list
     @title = "分类列表"
-    @categories = Category.all
+    @categories = Category.where("").order("order_num desc")
   end
 
   def add
@@ -39,10 +39,40 @@ class CategoryController < AdminBaseController
     end
   end
 
+  def edit
+    @title = "编辑"
+    if params[:type] == "cat"
+      @obj = Category.where("id=?", params[:id]).first
+    else
+      @obj = SubCategory.where("id=?", params[:id]).first
+    end
+    if request.post?
+      if params[:type] == "cat"
+        @obj = Category.where("id=?", params[:id]).first
+      else
+        @obj = SubCategory.where("id=?", params[:id]).first
+      end
+      @obj.name = params[:obj][:name]
+      @obj.order_num = params[:obj][:order_num]
+      if @obj.save
+        redirect_to :action => :list
+      else
+        render :action => :edit
+      end
+    end
+  end
+
   def update
     type, id = params[:id].split('_')
-    if Category.exists?(id)
-      Category.update(id, :name => params[:name])
+    if type == "s"
+      if SubCategory.exists?(id)
+        SubCategory.update(id, :name => params[:name])
+      end
+    end
+    if type == "c"
+      if Category.exists?(id)
+        Category.update(id, :name => params[:name])
+      end
     end
     render :text => ""
   end

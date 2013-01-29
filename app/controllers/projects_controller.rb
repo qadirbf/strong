@@ -7,7 +7,7 @@ class ProjectsController < AdminBaseController
   protect_from_forgery :except => 'delete_projects'
 
   def select_layout
-    ["show"].include?(params[:action]) ? "application" : "admin"
+    ["show", "case_list"].include?(params[:action]) ? "application" : "admin"
   end
 
   def edit
@@ -67,6 +67,7 @@ class ProjectsController < AdminBaseController
   def show
     @project = Project.find(params[:id])
     @title = @project.name
+    @m_title = @project.category.name
   end
 
   def index
@@ -93,6 +94,25 @@ class ProjectsController < AdminBaseController
     else
       render :text => ""
     end
+  end
+
+  # 外网项目列表
+  def case_list
+    if !params[:sub_cat].blank?
+      cat = SubCategory.where("id = ?", params[:sub_cat]).first
+      @title = cat.name
+      @m_title = "典型案例"
+      @projects = Project.where("sub_category_id = ?", params[:sub_cat].to_i).order("created_at").paginate :per_page => 12, :page => params[:page]
+    elsif !params[:cat].blank?
+      cat = Category.where("id = ?", params[:cat]).first
+      @title = cat.name
+      @m_title = "主营业务"
+      @projects = Project.where("category_id = ?", params[:cat].to_i).order("created_at").paginate :per_page => 12, :page => params[:page]
+    else
+      @title = "所有项目"
+      @projects = Project.where("").order("created_at").paginate :per_page => 12, :page => params[:page]
+    end
+
   end
 
   protected

@@ -17,6 +17,12 @@
         <td id="sub_td"><%= f.select :sub_category_id, @sub_categories, {:include_blank => true} %></td>
       </tr>
       <tr>
+        <th>排序数</th>
+        <td><%= f.text_field :order_num %></td>
+        <th>项目概述</th>
+        <td><%= f.text_area :summary, :style => "width:400px;height:100px;" %></td>
+      </tr>
+      <tr>
         <th>技术信息</th>
         <td><%= f.text_area :tech_info, :style => "width:400px;height:100px;" %></td>
         <th>项目描述</th>
@@ -50,7 +56,7 @@
             var tid = $(this).val(), category_td = $('#sub_td')
             if ($.trim(tid) == '') return
             category_td.html($('<span>').text('Loading...').css('color', 'red'))
-            category_td.load("/category/get_sub_categories", {id:tid, object:'category', field:'category_id'})
+            category_td.load("/category/get_sub_categories", {id:tid, object:'project', field:'sub_category_id'})
         })
     })
 </script>

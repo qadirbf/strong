@@ -8,4 +8,6 @@ class Project < ActiveRecord::Base
   validates_presence_of :description, :message => "请填写项目描述"
   validates_presence_of :system_config, :message => "请填写系统配置"
 
+  belongs_to :category
+
 end

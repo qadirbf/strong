@@ -29,11 +29,13 @@
 <ul class="firm_ul">
   <% @categories.each do |c| %>
       <li id="li_f_<%= c.id -%>">
-        <span class="ul_l_span" id="f_<%= c.id -%>"><%= c.name %></span>
+        <span class="ul_l_span" id="c_<%= c.id -%>"><%= c.name %></span>
+        <span>(<%= c.order_num.to_i -%>)</span>
         <span style="float:right;">
-          <%= link_to_function "编辑", "edit('f_t', #{c.id})" -%>&nbsp;&nbsp;
+          <%= link_to_function "编辑", "edit('c_t', #{c.id})" -%>&nbsp;&nbsp;
           <%= link_to "删除", {:action => "delete", :type => "category", :id => c.id}, :confirm => "Are you sure?" -%>&nbsp;&nbsp;
           <%= link_to_function "查看二级业务分类", "show_sub_categories(this, #{c.id})" %>
+          <%= link_to "新窗口编辑", :action => "edit", :id => c.id, :type => "cat" -%>
         </span>
       </li>
   <% end %>
@@ -42,11 +44,11 @@
 
 <script type="text/javascript">
     function edit(type, id) {
-        if (type == "f_t") {
-            var span = $("#f_" + id);
-        }
-        if (type == "c_p") {
+        if (type == "c_t") {
             var span = $("#c_" + id);
+        }
+        if (type == "s_p") {
+            var span = $("#s_" + id);
         }
         var name = span.html();
         span.html("");

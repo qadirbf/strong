@@ -1,6 +1,8 @@
 <h1 class="title"><%= @title %></h1>
-<%= form_for :category, :url => "/category/add" do |f| -%>
-    <%= errors_for @category %>
+<%= form_for :obj, :url => "/category/edit" do |f| -%>
+    <%= errors_for @obj %>
+    <%= hidden_field_tag "type", params[:type] -%>
+    <%= hidden_field_tag "id", params[:id] -%>
     <table class="blue_tb">
       <tr>
         <th width=100>名称</th>
