@@ -5,10 +5,10 @@ body {
     margin: 0px;
     padding: 0px;
     background-position: center top;
-    font-family: Arial, 微软雅黑, 黑体, sans-serif;
+    font-family: Arial, "微软雅黑", "黑体", sans-serif;
     font-size: 12px;
     font-weight: normal;
-    background-color: #dbf0f5;
+    /*background-color: #dbf0f5;*/
 }
 
 p{
@@ -58,7 +58,7 @@ div#wrapper {
 .page_heading {
     font-size: 25px;
     font-weight: normal;
-    font-family: 微软雅黑;
+    font-family: "微软雅黑";
     color: #286590;
     float: left;
     /*width: 750px;*/
@@ -80,7 +80,7 @@ div#wrapper {
 .breadcrumb {
     font-size: 14px;
     font-weight: normal;
-    font-family: 微软雅黑;
+    font-family: "微软雅黑";
     float: right;
     /*width: 175px;*/
     text-transform: uppercase;
@@ -200,10 +200,11 @@ h5 {
 .gossips_area {
     float: left;
     width: 353px;
-    background-image: url(/images/heading_gossips.jpg);
+    /*background-image: url(/images/heading_gossips.jpg);*/
     background-repeat: no-repeat;
     background-position: left top;
-    padding-top: 65px;
+    /*padding-top: 65px;*/
+    padding-right: 5px;
     font-size: 14px;
     font-weight: normal;
     color: #403f3f;
@@ -238,7 +239,8 @@ h5 {
 }
 .news_box a {
     text-decoration: none;
-    color: #026db4;
+    /*color: #026db4;*/
+    color: #333;
 }
 .news_box a:hover {
     text-decoration: underline;
@@ -264,7 +266,8 @@ h3 {
     color: #aaaaaa;
 }
 #footer {
-    background-image: url(/images/footer_line.gif);
+    /*background-image: url(/images/footer_line.gif);*/
+    background-image: url(/images/footer_line.jpg);
     background-repeat: no-repeat;
     background-position: center top;
     float: left;
@@ -837,9 +840,10 @@ h4 {
 }
 
 #box_right {
-    width: 669px;
+    width: 660px;
     float: right;
     margin-top: 20px;
+    margin-right: 5px;
 }
 #box_left_sub2{
     margin-top: 10px;

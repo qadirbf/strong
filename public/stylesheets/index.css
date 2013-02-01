@@ -85,7 +85,7 @@ ul.topnav {
     width: 560px;
     /*padding: 0 0 200px 0;*/
     float: left;
-    background: #DBF0F5;
+    /*background: #DBF0F5;*/
     /*background: url(/images/topnav_bg1.gif) repeat-x;*/
 }
 
@@ -99,9 +99,10 @@ ul.topnav li {
 
 ul.topnav li a {
     padding: 10px 5px;
-    color: #2E75A8;
+    /*color: #2E75A8;*/
+    color: #515151;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 16px;
     display: block;
     text-decoration: none;
     float: left;
