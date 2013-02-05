@@ -95,6 +95,7 @@ ul.topnav li {
     padding: 0 8px 0 10px;
     position: relative; /*--Declare X and Y axis base for sub navigation--*/
     display: inline;
+    /*background: url(/images/menu.jpg) no-repeat;*/
 }
 
 ul.topnav li a {
@@ -149,6 +150,62 @@ ul.topnav li ul.subnav li {
     border-top: 1px solid #CFE6F0; /*--Create bevel effect--*/
     border-bottom: 1px solid #CFE6F0; /*--Create bevel effect--*/
     clear: both;
+}
+
+.content_l{
+    float:left;
+    width: 320px;
+    margin-right: 20px;
+}
+
+ul.box {
+    width: 640px;
+    /*height: 320px;*/
+    float: right;
+}
+
+ul.box li {
+    width: 319px;
+    height: 79px;
+    float: left;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    background: url('/images/boxbg.jpg') repeat-x;
+    overflow: hidden;
+}
+
+ul.box li .bcont {
+    margin: 13px;
+    height: 53px;
+}
+
+ul.box li .bcont h3 {
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    height: 21px;
+    line-height: 21px;
+}
+
+ul.box li .bcont img {
+    width: 93px;
+    height: 52px;
+    border: #DADADA 1px solid;
+    float: left;
+    margin-right: 13px;
+    display: block;
+}
+ul.box li a {
+    text-decoration: none;
+}
+
+ul.box li .bcont p {
+    line-height: 18px;
+    color: #666;
+    padding: 0;
+    text-indent: 0;
+    margin:0;
+    font-size: 12px;
 }
 
 html ul.topnav li ul.subnav li a {

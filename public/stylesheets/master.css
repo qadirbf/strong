@@ -29,16 +29,18 @@ div#wrapper {
 .logo {
     float: left;
     width: 179px;
-    margin-top: 25px;
+    /*margin-top: 25px;*/
+    margin-top: 10px;
 }.main_banner {
      float: left;
      /*height: 428px;*/
      height: 308px;
      width: 980px;
-     margin-top: 28px;
+     /*margin-top: 28px;*/
  }
 #content {
     float: left;
+    margin-top: 20px;
     width: 980px;
 }
 #inner_content {
@@ -258,7 +260,8 @@ h5 {
 h3 {
     font-size: 30px;
     font-weight: normal;
-    color: #005793;
+    /*color: #005793;*/
+    color: #FF8000;
     margin: 0px;
     padding: 0px;
 }

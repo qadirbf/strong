@@ -30,17 +30,17 @@
   </script>
 </head>
 <body>
-<div id="wrapper">
+<div id="nav_tab" style="width: 100%;background: url('/images/topbg.jpg') 20px repeat-x;">
+  <div style="width: 980px;margin: 0 auto;position:relative;min-height: 90px;">
   <div class="logo">
     <a href="/">
       <img src="/images/logo.png" alt="南昌思创工程技术有限公司" width="363" height="55" border="0" title="南昌思创工程技术有限公司"/>
     </a>
   </div>
-
   <div class="examples_body">
     <ul class="topnav">
-      <li><a href="/index.php">首 页</a></li>
-      <li>
+      <li class="m1"><a href="/index.php">首&nbsp;&nbsp;&nbsp;&nbsp;页</a></li>
+      <li class="m2">
         <a href="/introduction.php">关于我们</a>
         <ul class="subnav">
           <li><a href="/introduction.php">公司简介</a></li>
@@ -50,7 +50,7 @@
           <li><a href="/honor.php">资质荣誉</a></li>
         </ul>
       </li>
-      <li>
+      <li class="m3">
         <a href="/services.php">主营业务</a>
         <ul class="subnav">
           <% cats = Category.where("").order("order_num desc")||[] -%>
@@ -59,13 +59,19 @@
           <% end -%>
         </ul>
       </li>
-      <li><a href="/projects.php">典型案例</a>
+      <li class="m4"><a href="/projects.php">典型案例</a>
       </li>
-      <li><a href="/recruitment.php">招贤纳士</a></li>
-      <li><a href="/contact.php">联系我们</a></li>
+      <li class="m5"><a href="/recruitment.php">招贤纳士</a></li>
+      <li class="m6"><a href="/contact.php">联系我们</a></li>
     </ul>
     <!-- Examples body -->
   </div>
+  </div>
+</div>
+<div id="wrapper">
+
+
+
 
 
   <% if params[:action] == "index" -%>

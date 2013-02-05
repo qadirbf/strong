@@ -16,30 +16,54 @@
   </div>
 </div>
 <div id="content">
-  <h5>
-    始终奉行“实用、可靠、有效益、适度先进”的原则，为客户提供一站式的系统解决方案。
-  </h5>
+  <div class="content_l">
+    <h3>思创概况</h3>
+    <p>
+      南昌思创工程技术有限公司始创于1997年10月，是专业从事自动控制系统集成与服务、建筑智能化系统集成与服务、企业信息化系统集成与服务、节能及运维服务的高科技公司。
+      <a href="/introduction.php" style="color: #026db4;">查看详细>></a>
+    </p>
 
-  <div class="mid_content">
-    <div class="gossips_area">思创工程是专业从事自动控制系统集成与服务、建筑智能化系统集成与服务、节能及运维服务的高科技公司。<br/>
-      <a href="/introduction.php" target="_blank">详细 ›</a></div>
-    <div class="news_box">
-      <font style="color:black;font-size: 15px;">成功案例</font><br/>
-      <% unless @projects.blank? -%>
-          <% @projects.each do |p| -%>
-              <p>
-                <a href="/projects/show/<%= p.id -%>.php" target="_blank"><%= p.name -%></a>
-                <font style="float:right;"><%= format_date(p.created_at, :date) -%></font>
-              </p>
-          <% end -%>
-      <% else -%>
-          <p>暂无数据</p>
-      <% end -%>
-    </div>
-    <div class="tweets_box">
-      未来，思创工程将一如既往地以诚为本，以变为道，奉行“更密切、更快捷、更高效、更全面、更专业”的服务理念，继续追求技术创新，提供高水准、全面性、专业化的服务，致力于将公司打造成立足江西，辐射周边，面向全国的行业翘楚。
-    </div>
   </div>
+  <ul class="box">
+    <li style="background-image: url(/images/boxbg.jpg);">
+      <div class="bcont">
+        <a href="/projects/case_list?cat=1"><img src="/images/bp1.jpg"></a>
+        <h3><a href="/projects/case_list?cat=1" style="color: rgb(0, 0, 0);">自动化</a></h3>
+        <p style="color: rgb(102, 102, 102);">提供集控制、优化、调度、管理、经营于一体的综合自动化解决方案</p>
+      </div>
+    </li>
+    <li style="background-image: url(/images/boxbg.jpg);">
+      <div class="bcont">
+        <a href="/projects/case_list?cat=3"><img src="/images/bp2.jpg"></a>
+        <h3><a href="/projects/case_list?cat=3" style="color: rgb(0, 0, 0);">信息化</a></h3>
+        <p style="color: rgb(102, 102, 102);">提供公用工程信息化领域的产品、服务及智慧城市信息化解决方案</p>
+      </div>
+    </li>
+    <li style="background-image: url(/images/boxbg.jpg);">
+      <div class="bcont">
+        <a href="/projects/case_list?cat=5"><img src="/images/bp6.jpg"></a>
+        <h3><a href="/projects/case_list?cat=5" style="color: rgb(0, 0, 0);">智能化</a></h3>
+        <p style="color: rgb(102, 102, 102);">提供化工和建设工程方面的工程设计、咨询服务</p>
+      </div>
+    </li>
+    <li style="background-image: url(/images/boxbg.jpg);">
+      <div class="bcont">
+        <a href="/projects/case_list?cat=4"><img src="/images/bp3.jpg"></a>
+        <h3><a href="/projects/case_list?cat=4" style="color: rgb(0, 0, 0);">节能及维保</a></h3>
+        <p style="color: rgb(102, 102, 102);">提供数字化医院建设、区域卫生信息化、智能化健康管理解决方案</p>
+      </div>
+    </li>
+  </ul>
 </div>
-
+<script type="text/javascript">
+    $(".box > li").mouseenter(function(){
+        $(this).css("backgroundImage","url(/images/box-hover.jpg)");
+        $(this).children(".bcont").children("H3").children("a").css("color","#eb8102");
+        $(this).children(".bcont").children("p").css("color","#e6e6e6");
+    }).mouseleave(function(){
+                $(this).css("backgroundImage","url(/images/boxbg.jpg)");
+                $(this).children(".bcont").children("H3").children("a").css("color","#000");
+                $(this).children(".bcont").children("p").css("color","#666");
+            });
+</script>
 <%#= render :partial => "/common/friend_links" -%>
