@@ -46,7 +46,7 @@ div#wrapper {
 #inner_content {
     float: left;
     width: 980px;
-    margin-top:28px;
+    /*margin-top:28px;*/
     background-image: url("/images/content_main_bg.png");
     background-repeat: no-repeat;
     background-position: center top;
