@@ -34,7 +34,7 @@
             <li><span style="color: #FFF;"><%= current_user.username %></span></li>
             <li><a href="/admin_main/index">返回首页</a></li>
             <li><a href="/">思创首页</a></li>
-            <% msg_label = @msg_count>0 ? "(#{@msg_count.to_s.red})<img src='/images/msg.gif'>" : "(0)" %>
+            <% msg_label = @msg_count.to_i>0 ? "(#{@msg_count.to_s.red})<img src='/images/msg.gif'/>" : "(0)" %>
             <li><%= link_to "未读消息#{msg_label}".html_safe,
                             {:controller => "msg", :action => "unread"}, :style => "margin:0px 15px 0px 10px;" %> </li>
             <li><%= link_to "退出", {:controller => "users", :action => "logout"} %> </li>
