@@ -15,9 +15,9 @@
         </p>
 
         <p><label for="register_begin_time">使用时间</label>
-          <%= text_field "register", "begin_time", :value => format_date(@register.begin_time, :min), :class => "datepicker" %>
+          <%= text_field "register", "begin_time", :value => format_date(@register.begin_time, :min), :class => "dtimepicker" %>
           ~
-          <%= text_field "register", "end_time", :value => format_date(@register.end_time, :min), :class => "datepicker" %>
+          <%= text_field "register", "end_time", :value => format_date(@register.end_time, :min), :class => "dtimepicker" %>
         </p>
 
         <p><label for="register_apply_reason">车辆使用备注</label>
