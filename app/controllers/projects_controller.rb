@@ -36,6 +36,8 @@ class ProjectsController < AdminBaseController
       flash[:notice] = "成功保存！"
       redirect_to :action => "list", :format => "php"
     else
+      @categories = Category.all.map { |c| [c.name, c.id] }
+      @sub_categories = SubCategory.all.map { |c| [c.name, c.id] }
       @title = params[:id].blank? ? "添加项目" : "修改项目"
       render :action => "edit"
     end
