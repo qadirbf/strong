@@ -300,12 +300,12 @@ h3 {
 }
 .footer_form {
     float: left;
-    width: 250px;
+    width: 350px;
     margin-top: 31px;
 }
 .footer_form_text {
     float: right;
-    width: 200px;
+    width: 300px;
     font-size: 11px;
     font-weight: normal;
     color: #8e8d8d;
@@ -321,7 +321,7 @@ h3 {
 .footer_social_icons {
     float:right;
     /*width:188px;*/
-    margin-top:28px;
+    margin-top:10px;
 }
 ul#footer_social_icons {
     width: 188px;
