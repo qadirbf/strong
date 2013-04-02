@@ -77,6 +77,8 @@ class CarsController < AdminBaseController
       redirect_to :action => "register_show", :id => @register.id
     else
       @title = params[:id].blank? ? "登记" : "修改登记信息"
+      @users = User.all.map { |u| [u.username, u.id] }
+      @cars = Car.all.map { |c| [c.name, c.id] }
       render :action => "register_use"
     end
   end
