@@ -67,7 +67,7 @@ class ProjectsController < AdminBaseController
   end
 
   def show
-    @project = Project.find(params[:id])
+    @project = Project.where("id = ?", params[:id]).first
     @title = @project.name
     @m_title = @project.category.name
   end
