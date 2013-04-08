@@ -66,7 +66,7 @@ class CarsController < AdminBaseController
       @register = CarRegister.new
     end
     @users = User.all.map { |u| [u.username, u.id] }
-    @cars = Car.all.map { |c| [c.name, c.id] }
+    @cars = Car.all.map { |c| [[c.name, c.license].join(':'), c.id] }
   end
 
   def register_update
