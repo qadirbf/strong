@@ -837,6 +837,7 @@ h4 {
 #box_left {
     width: 250px;
     float: left;
+    display:inline;
     margin-left: 15px;
     margin-top: 20px;
     margin-bottom: 20px;
