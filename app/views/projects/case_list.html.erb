@@ -16,9 +16,11 @@
     <%= render :partial => "/main/left_menu" -%>
     <div id="box_right">
       <h3 style="top: -2px; left: -2px; font-size: 14px;border-bottom: 1px solid #DBDBDB;width: 98%;">
-        公司业务
+        <%= @title -%>
       </h3>
-
+      <p>
+        <%= project_des(@title) -%>
+      </p>
       <div>
         <ul class="p_ul">
           <% @projects.each do |p| -%>
